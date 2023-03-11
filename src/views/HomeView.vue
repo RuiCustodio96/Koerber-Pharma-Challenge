@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import HeaderChallenge from '.././components/HeaderChallenge.vue'
+import LoginFormChallenge from '.././components/LoginFormChallenge.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <HeaderChallenge/>
+    <LoginFormChallenge/>
 </template>

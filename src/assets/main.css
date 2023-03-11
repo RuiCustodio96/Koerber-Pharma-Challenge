@@ -1,35 +1,59 @@
 @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/*#region LoginForm*/
 
-  font-weight: normal;
+.row{
+    margin: 0;
 }
 
-a,
-.blue {
-  text-decoration: none;
-  color: rgb(0, 134, 211);
-  transition: 0.4s;
+.row .container{
+margin-top: 60px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(209, 100%, 50%, 0.2);
-  }
+.row .container .card{
+width: 400px;
+background-color: #fff9f9;
+margin: auto auto;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.row .container .card .form-label{
+font-size: 16px;
 }
+
+.row .container .card .form-title{
+padding-bottom: 25px;
+}
+
+.row .container .card .form-input{
+width:100%;
+}
+
+.row .container .card .login-button{
+text-align: right;
+}
+
+/*#endregion LoginForm*/
+
+/*#region Navbar*/
+
+nav {
+    background-color: black;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+/*#endregion Navbar*/
