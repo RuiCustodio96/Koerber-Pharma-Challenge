@@ -2,15 +2,11 @@
 
 /*#region LoginForm*/
 
-.row {
-    margin: 0;
-}
-
-.row .container {
+.container .login-form {
     margin-top: 60px;
 }
 
-.row .container .card {
+.container .row .card {
     width: 400px;
     background-color: #fff9f9;
     margin: auto auto;
@@ -18,19 +14,19 @@
     border-radius: 1rem;
 }
 
-.row .container .card .form-label {
+.container .row .card .form-label {
     font-size: 16px;
 }
 
-.row .container .card .form-title {
+.container .row .card .form-title {
     padding-bottom: 25px;
 }
 
-.row .container .card .form-input {
+.container .row .card .form-input {
     width: 100%;
 }
 
-.row .container .card .login-button {
+.container .row .card .login-button {
     text-align: right;
 }
 
@@ -75,3 +71,54 @@
 }
 
 /*#endregion Navbar*/
+
+/*#region Post List Component*/
+
+.posts-button {
+    text-align: right;
+    margin: auto 0 !important;
+}
+
+.posts-title {
+    padding: 40px;
+}
+
+.posts-button button {
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    width: 35%;
+}
+
+.posts-email {
+    width: 40%;
+}
+
+.email-form label {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.get-posts {
+    margin-left: 5px;
+    vertical-align: unset;
+}
+
+.container .row .card-post {
+    background-color: #fff9f9;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    border-radius: 1rem;
+    margin: 20px 30px;
+    width: 20%;
+}
+
+.container .row .card-post-body {
+    padding: 10px !important;
+}
+
+p {
+    font-size: 14px;
+}
+
+/*#endregion Post List Component*/
