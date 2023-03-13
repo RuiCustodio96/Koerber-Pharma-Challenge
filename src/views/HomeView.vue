@@ -2,6 +2,7 @@
 import HeaderChallenge from '.././components/HeaderChallenge.vue'
 import LoginFormChallenge from '.././components/LoginFormChallenge.vue'
 import PostsListChallenge from '.././components/PostsListChallenge.vue';
+
 </script>
 
 <template>
