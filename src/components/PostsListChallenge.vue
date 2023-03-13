@@ -3,15 +3,16 @@ import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
 </script>
 
 <template>
-    <ModalNewPostChallenge v-if="showModalNewPost" @close="showModalNewPost = false" :showModalNewPost="showModalNewPost" />
+    <ModalNewPostChallenge v-if="showModalNewPost" @close="showModalNewPost = false" @new-post="addPost($event)"
+        :showModalNewPost="showModalNewPost" />
 
     <!-- Title -->
     <div class="container">
         <div class="row">
-            <div class="col-7 posts-title">
+            <div class="col-lg-7 col-sm-4 col-4 posts-title">
                 <h3>Posts List</h3>
             </div>
-            <div class="col-5 posts-button">
+            <div class="col-lg-5 col-sm-8 col-8 posts-button">
                 <button class="btn btn-primary" @click="newPost()">New Post</button>
             </div>
         </div>
@@ -22,7 +23,7 @@ import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
     <!-- Form -->
     <div class="container">
         <div class="row">
-            <div class="col-6 email-form">
+            <div class="col-lg-6 col-12 email-form">
                 <label class="form-label">Insert Email</label>
                 <div class="inline">
                     <input type="email" class="posts-email" v-on:blur="validateEmail()" v-model="email" />
@@ -36,8 +37,8 @@ import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
 
     <!-- Cards -->
     <div class="container">
-        <div class="row row-cols-4">
-            <div class="col card-post" v-for="post in posts">
+        <div class="row">
+            <div class="col-lg-3 col-12 col-sm-12 card-post" v-for="post in posts">
                 <div class="card-post-body">
                     <div class="form-title">
                         <h5>{{ post.title }}</h5>
@@ -66,6 +67,17 @@ export default {
             posts: Array<{ title: string, body: string }>()
         }
     },
+    mounted() {
+        const cookieValue = document.cookie.split("; ")
+            .find((row) => row.startsWith("PostsListEmail="))
+            ?.split("=")[1];
+
+        this.email = cookieValue != undefined ? cookieValue : '';
+
+        if (this.email != '') {
+            this.invalidEmail = false;
+        }
+    },
     methods: {
 
         //Validate if valid email to enable/disable get posts button
@@ -76,10 +88,14 @@ export default {
         //Get posts for given email
         async getPosts(): Promise<void> {
 
+            document.cookie = 'PostsListEmail=' + this.email + ";maxage=31536000;";
+
             //Search for the user with the given email
             fetch('https://dummyjson.com/users/search?q=' + this.email)
                 .then(res => res.json())
                 .then(data => {
+
+                    this.posts = new Array<{ title: string, body: string }>();
 
                     if (data.users[0] != undefined) {
 
@@ -97,13 +113,16 @@ export default {
                     } else {
                         //Case email doesn't exist
                         alert("Invalid Email!");
-                        this.posts = new Array<{ title: string, body: string }>();
                     }
                 });
         },
 
         newPost() {
             this.showModalNewPost = true;
+        },
+
+        addPost(post: any) {
+            this.posts.push({ title: post.title, body: post.body });
         }
     }
 }

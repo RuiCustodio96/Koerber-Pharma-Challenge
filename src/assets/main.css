@@ -109,16 +109,38 @@
     background-color: #fff9f9;
     box-shadow: 0 0 10px rgb(0 0 0 / 50%);
     border-radius: 1rem;
-    margin: 20px 30px;
-    width: 20%;
+    margin: 20px 28px;
 }
 
 .container .row .card-post-body {
     padding: 10px !important;
+    word-wrap: break-word;
 }
 
 p {
     font-size: 14px;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (max-width: 992px) {
+    .container .row .card-post {
+        margin: 20px 5px;
+    }
+
+    .row {
+        margin: 0 !important;
+    }
+
+    .login-form {
+        margin-top: 50px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .container .row .card-post {
+        width: 20%;
+    }
 }
 
 /*#endregion Post List Component*/

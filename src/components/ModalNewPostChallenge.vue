@@ -59,7 +59,9 @@ export default {
     },
     methods: {
         createPost() {
-
+            let post = { title: this.title, body: this.description };
+            this.$emit('new-post', post);
+            this.$emit('close', '');
         }
     }
 }
