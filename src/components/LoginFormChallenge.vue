@@ -54,6 +54,7 @@ export default {
     //Send user verification token to validate Login
     sendValue(data: any) {
       if (data.message == null || data.message == undefined) {
+
         this.name = data.firstName + ' ' + data.lastName;
         this.userImage = data.image;
 

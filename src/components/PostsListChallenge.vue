@@ -9,10 +9,10 @@ import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
     <!-- Title -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-sm-4 col-4 posts-title">
+            <div class="col-lg-7 col-sm-6 col-6 posts-title">
                 <h3>Posts List</h3>
             </div>
-            <div class="col-lg-5 col-sm-8 col-8 posts-button">
+            <div class="col-lg-5 col-sm-6 col-6 posts-button">
                 <button class="btn btn-primary" @click="newPost()">New Post</button>
             </div>
         </div>
@@ -27,7 +27,8 @@ import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
                 <label class="form-label">Insert Email</label>
                 <div class="inline">
                     <input type="email" class="posts-email" v-on:blur="validateEmail()" v-model="email" />
-                    <button class="btn btn-primary get-posts" v-bind:disabled="invalidEmail" @click="getPosts()">Get
+                    <button class="btn btn-primary get-posts" v-bind:class="{ valid: !invalidEmail }"
+                        v-bind:disabled="invalidEmail" @click="getPosts()">Get
                         Posts</button>
                 </div>
             </div>
@@ -124,6 +125,9 @@ export default {
         addPost(post: any) {
             this.posts.push({ title: post.title, body: post.body });
         }
+    },
+    test() {
+
     }
 }
 

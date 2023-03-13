@@ -121,28 +121,6 @@ p {
     font-size: 14px;
 }
 
-/* Small devices (landscape phones, 576px and up)*/
-
-@media (max-width: 992px) {
-    .container .row .card-post {
-        margin: 20px 5px;
-    }
-
-    .row {
-        margin: 0 !important;
-    }
-
-    .login-form {
-        margin-top: 50px !important;
-    }
-}
-
-@media (min-width: 992px) {
-    .container .row .card-post {
-        width: 20%;
-    }
-}
-
 /*#endregion Post List Component*/
 
 /*#region Modal*/
@@ -200,3 +178,35 @@ p {
 }
 
 /*#endregion Modal*/
+
+/*#region Responsive*/
+
+@media (max-width: 992px) {
+    .container .row .card-post {
+        margin: 20px 5px;
+    }
+
+    .row {
+        margin: 0 !important;
+    }
+
+    .login-form {
+        margin-top: 50px !important;
+    }
+
+    .posts-button button {
+        width: 100%
+    }
+
+    .posts-email {
+        width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container .row .card-post {
+        width: 20%;
+    }
+}
+
+/*#endregion Responsive*/
