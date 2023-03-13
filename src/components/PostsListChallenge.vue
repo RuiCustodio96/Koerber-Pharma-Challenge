@@ -1,4 +1,10 @@
+<script setup lang="ts">
+import ModalNewPostChallenge from '.././components/ModalNewPostChallenge.vue';
+</script>
+
 <template>
+    <ModalNewPostChallenge v-if="showModalNewPost" @close="showModalNewPost = false" :showModalNewPost="showModalNewPost" />
+
     <!-- Title -->
     <div class="container">
         <div class="row">
@@ -53,6 +59,7 @@ export default {
     name: 'PostsListChallenge',
     data() {
         return {
+            showModalNewPost: false,
             email: '',
             userId: '',
             invalidEmail: true,
@@ -96,7 +103,7 @@ export default {
         },
 
         newPost() {
-
+            this.showModalNewPost = true;
         }
     }
 }

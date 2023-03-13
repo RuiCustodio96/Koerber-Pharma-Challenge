@@ -3,26 +3,29 @@
     <div class="row login-form">
       <div class="card">
         <div class="card-body p-5">
-
+          <!-- Title -->
           <div class="form-title">
             <h3>Login</h3>
           </div>
+          <!-- End Title -->
 
-          <div class="form-outline mb-4">
+          <!-- Form -->
+          <div class="mb-4">
             <label class="form-label">Username</label>
             <input type="text" class="form-input" v-model="username" />
-            <!-- <input type="email" class="form-input" v-bind:value="email" /> -->
           </div>
 
-          <div class="form-outline mb-4">
+          <div class="mb-4">
             <label class="form-label">Password</label>
             <input type="password" class="form-input" v-model="password" />
-            <!-- <input type="password" class="form-input" v-bind:value="password" /> -->
           </div>
+          <!-- End Form -->
 
+          <!-- Actions -->
           <div class="login-button">
             <button class="btn btn-primary btn-lg btn-block" @click="submitLogin" type="submit">Login</button>
           </div>
+          <!-- End Actions -->
         </div>
       </div>
     </div>
